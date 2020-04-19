@@ -1,21 +1,42 @@
 import React from 'react';
 import Ticket from './Ticket';
 
-const masterTicketList = [
+const marketSchedule = [
   {
-    names: 'Thato and Haley',
-    location: '3A',
-    issue: 'Firebase won\'t save record. Halp.'
+    day: "Sunday",
+    location: "Lents International",
+    hours: "9:00am - 2:00pm",
+    booth: "4A"
   },
   {
-    names: 'Sleater and Kinney',
-    location: '4B',
-    issue: 'Prop types are throwing an error.'
+    day: "Monday",
+    location: "Pioneer Courthouse Square",
+    hours: "10:00am - 2:00pm",
+    booth: "7C"
   },
   {
-    names: 'Imani & Jacob',
-    location: '9F',
-    issue: 'Child component isn\'t rendering.'
+    day: "Tuesday",
+    location: "Hillsboro",
+    hours: "5:00pm - 8:30pm",
+    booth: "1F"
+  },
+  {
+    day: "Wednesday",
+    location: "Shemanski Park",
+    hours: "10:00am - 2:00pm",
+    booth: "3E"
+  },
+  {
+    day: "Thursday",
+    location: "Northwest Portland",
+    hours: "2:00pm - 6:00pm",
+    booth: "6D"
+  },
+  {
+    day: "Saturday",
+    location: "Beaverton",
+    hours: "10:00am - 1:30pm",
+    booth: "9G"
   }
 ];
 
@@ -23,10 +44,11 @@ function TicketList() {
   return (
     <React.Fragment>
       <hr />
-      {masterTicketList.map((ticket, index) =>
-        <Ticket names={ticket.names}
+      {marketSchedule.map((ticket, index) =>
+        <Ticket day={ticket.day}
           location={ticket.location}
-          issue={ticket.issue}
+          hours={ticket.hours}
+          booth={ticket.booth}
           key={index} />
       )}
     </React.Fragment>
